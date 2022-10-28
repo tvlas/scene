@@ -334,7 +334,7 @@ const sphereCtrls = gui.addFolder({
 //   coif.material.color = new Color(e.value)
 // })
 
-// sphereCtrls.addInput(coif.material, "wireframe")
+sphereCtrls.addInput(coif.material, "wireframe")
 
 scene.add(coif)
 scene.add(coif_body)
