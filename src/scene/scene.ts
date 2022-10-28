@@ -309,32 +309,32 @@ side_details.castShadow = true
 
 
 const sphereCtrls = gui.addFolder({
-  title: "Sphere",
+  title: "3D Rocket model by Thiago Vinicios",
 })
 
-sphereCtrls.addInput(coif.position, "x", {
-  label: "pos x",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-sphereCtrls.addInput(coif.position, "y", {
-  label: "pos y",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-sphereCtrls.addInput(coif.position, "z", {
-  label: "pos z",
-  min: -10,
-  max: 10,
-  step: 0.1,
-})
-sphereCtrls.addInput(PARAMS, "color").on("change", (e) => {
-  coif.material.color = new Color(e.value)
-})
+// sphereCtrls.addInput(coif.position, "x", {
+//   label: "pos x",
+//   min: -10,
+//   max: 10,
+//   step: 0.1,
+// })
+// sphereCtrls.addInput(coif.position, "y", {
+//   label: "pos y",
+//   min: -10,
+//   max: 10,
+//   step: 0.1,
+// })
+// sphereCtrls.addInput(coif.position, "z", {
+//   label: "pos z",
+//   min: -10,
+//   max: 10,
+//   step: 0.1,
+// })
+// sphereCtrls.addInput(PARAMS, "color").on("change", (e) => {
+//   coif.material.color = new Color(e.value)
+// })
 
-sphereCtrls.addInput(coif.material, "wireframe")
+// sphereCtrls.addInput(coif.material, "wireframe")
 
 scene.add(coif)
 scene.add(coif_body)
