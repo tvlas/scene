@@ -57,11 +57,11 @@ scene.fog = fog
 
 const textureLoader = new TextureLoader()
 
-const brickColorTexture = textureLoader.load("static/textures/bricks/color.jpg")
-const brickAmbientOcclusionTexture = textureLoader.load("static/textures/bricks/ambientOcclusion.jpg")
-const brickNormalTexture = textureLoader.load("static/textures/bricks/normal.jpg")
-const brickRoughnessTexture = textureLoader.load("static/textures/bricks/roughness.jpg")
-const gameScreenTexture = textureLoader.load("static/textures/details/game.jpg")
+const brickColorTexture = textureLoader.load("../static/textures/bricks/color.jpg")
+const brickAmbientOcclusionTexture = textureLoader.load("../static/textures/bricks/ambientOcclusion.jpg")
+const brickNormalTexture = textureLoader.load("../static/textures/bricks/normal.jpg")
+const brickRoughnessTexture = textureLoader.load("../static/textures/bricks/roughness.jpg")
+const gameScreenTexture = textureLoader.load("../static/textures/details/game.jpg")
 
 
 const lighController = gui.addFolder({
