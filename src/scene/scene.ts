@@ -3,7 +3,7 @@ import {
   Float32BufferAttribute,
   Fog,
   Group, Mesh, MeshStandardMaterial, MeshToonMaterial,
-  PlaneGeometry, PointLight, RectAreaLight, Scene, SpotLight, TextureLoader
+  PlaneGeometry, PointLight, RectAreaLight, Scene, SpotLight
 } from "three"
 
 import { gui } from "../core/gui"
@@ -54,15 +54,6 @@ scene.add(directionalLight, roomLight, lampLight,)
 
 const fog = new Fog("#262837", 2, 75)
 scene.fog = fog
-
-const textureLoader = new TextureLoader()
-
-const brickColorTexture = textureLoader.load("src/static/textures/bricks/1color.jpg")
-const brickAmbientOcclusionTexture = textureLoader.load("src/static/textures/bricks/1ambientOcclusion.jpg")
-const brickNormalTexture = textureLoader.load("src/static/textures/bricks/1normal.jpg")
-const brickRoughnessTexture = textureLoader.load("src/static/textures/bricks/1roughness.jpg")
-const gameScreenTexture = textureLoader.load("src/static/textures/details/1game.jpg")
-
 
 const lighController = gui.addFolder({
   title: "Lights",
@@ -124,10 +115,6 @@ const wall1 = new Mesh(
   new BoxGeometry(7, 4, 0.3),
   new MeshStandardMaterial({
     color: "#F3EDFF",
-    map: brickColorTexture,
-    aoMap: brickAmbientOcclusionTexture,
-    normalMap: brickNormalTexture,
-    roughnessMap: brickRoughnessTexture,
   })
 )
 
@@ -389,7 +376,7 @@ monitor.position.set(-1.2, 1.3, -3.5)
 const monitorScreen = new Mesh(
   new BoxGeometry(1.2, 0.7, 0.1),
   new MeshStandardMaterial({
-    map: gameScreenTexture
+    color: "#FFFF",
   })
 )
 monitorScreen.receiveShadow = true
