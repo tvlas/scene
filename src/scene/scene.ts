@@ -57,7 +57,7 @@ scene.fog = fog
 
 const textureLoader = new TextureLoader()
 
-const brickColorTexture = textureLoader.load("src/static/textures/bricks/1color.jpg")
+const brickColorTexture = textureLoader.load(required("src/static/textures/bricks/1color.jpg"))
 const brickAmbientOcclusionTexture = textureLoader.load("src/static/textures/bricks/1ambientOcclusion.jpg")
 const brickNormalTexture = textureLoader.load("src/static/textures/bricks/1normal.jpg")
 const brickRoughnessTexture = textureLoader.load("src/static/textures/bricks/1roughness.jpg")
@@ -565,4 +565,8 @@ scene.add(plane)
 
 export function updateScene() {
   updateRenderer()
+}
+
+function required(arg0: string): string {
+  throw new Error("Function not implemented.")
 }
