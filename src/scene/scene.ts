@@ -3,7 +3,7 @@ import {
   Float32BufferAttribute,
   Fog,
   Group, Mesh, MeshStandardMaterial, MeshToonMaterial,
-  PlaneGeometry, PointLight, RectAreaLight, Scene, SpotLight
+  PlaneGeometry, PointLight, RectAreaLight, Scene, SpotLight, TextureLoader
 } from "three"
 
 import { gui } from "../core/gui"
@@ -54,6 +54,13 @@ scene.add(directionalLight, roomLight, lampLight,)
 
 const fog = new Fog("#262837", 2, 75)
 scene.fog = fog
+
+const textureLoader = new TextureLoader()
+
+const wallColor = textureLoader.load("/texture/color.jpg")
+const wallAmbientOcclusion = textureLoader.load("/texture/ambientOcclusion.jpg")
+const wallRoughness = textureLoader.load("/texture/roughness.jpg")
+const wallNormal = textureLoader.load("/texture/normal.jpg")
 
 const lighController = gui.addFolder({
   title: "Lights",
@@ -114,7 +121,11 @@ ground.position.set(0, 0.15, 0)
 const wall1 = new Mesh(
   new BoxGeometry(7, 4, 0.3),
   new MeshStandardMaterial({
-    color: "#F3EDFF",
+    //color: "#F3EDFF",
+    map: wallColor,
+    aoMap: wallAmbientOcclusion,
+    roughnessMap: wallRoughness,
+    normalMap: wallNormal,
   })
 )
 
