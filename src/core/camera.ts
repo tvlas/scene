@@ -16,7 +16,7 @@ export const camera = new PerspectiveCamera(
   FAR
 )
 
-camera.position.set(-10.5, 10, 20)
+camera.position.set(-10.5, 7, 10)
 
 window.addEventListener("resize", () => {
   sizes.width = window.innerWidth

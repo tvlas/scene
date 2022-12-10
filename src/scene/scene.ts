@@ -22,8 +22,8 @@ gui.addInput(axesHelper, "visible", {
 const ambientLight = new AmbientLight("#B9D5FF", 0.55)
 scene.add(ambientLight)
 
-const directionalLight = new DirectionalLight("#B9D5FF", 1)
-directionalLight.castShadow = true
+const directionalLight = new DirectionalLight("#FFFFF", 2.5)
+directionalLight.castShadow = false
 directionalLight.shadow.mapSize.set(1024, 1024)
 directionalLight.shadow.camera.far = 500
 directionalLight.shadow.normalBias = 0.5
@@ -61,6 +61,9 @@ const wallColor = textureLoader.load("/texture/color.jpg")
 const wallAmbientOcclusion = textureLoader.load("/texture/ambientOcclusion.jpg")
 const wallRoughness = textureLoader.load("/texture/roughness.jpg")
 const wallNormal = textureLoader.load("/texture/normal.jpg")
+
+const monitorTexture = textureLoader.load("/texture/monitor.jpg")
+const tvTexture = textureLoader.load("/texture/flix.jpg")
 
 const lighController = gui.addFolder({
   title: "Lights",
@@ -387,7 +390,8 @@ monitor.position.set(-1.2, 1.3, -3.5)
 const monitorScreen = new Mesh(
   new BoxGeometry(1.2, 0.7, 0.1),
   new MeshStandardMaterial({
-    color: "#FFFF",
+    //color: "#FFFF",
+    map: monitorTexture
   })
 )
 monitorScreen.receiveShadow = true
@@ -543,7 +547,10 @@ tv.rotation.y = Math.PI / 2
 
 const tvScreen = new Mesh(
   new BoxGeometry(2.2, 1.2, 0.1),
-  new MeshStandardMaterial({ color: "#282826" })
+  new MeshStandardMaterial({
+    //color: "#282826" 
+    map: tvTexture
+  })
 )
 tvScreen.receiveShadow = true
 tvScreen.position.set(3.299, 2, 0.5)
